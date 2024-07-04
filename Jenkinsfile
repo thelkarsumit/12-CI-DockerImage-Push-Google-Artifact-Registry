@@ -59,9 +59,8 @@ stage('Trivy Scan Docker Image') {
 stage('Docker Push To Google-Artifact-Registry') {
             steps {
                 script {
-                        sh '''gcloud auth configure-docker \
-                              us-central1-docker.pkg.dev \
-                              docker push us-central1-docker.pkg.dev/peak-axiom-426310-b1/docker-image-push-01/helloworld1'''
+                        sh 'gcloud auth configure-docker us-central1-docker.pkg.dev'
+                        sh 'docker push us-central1-docker.pkg.dev/peak-axiom-426310-b1/docker-image-push-01/helloworld1'
                 }
             }
         }
