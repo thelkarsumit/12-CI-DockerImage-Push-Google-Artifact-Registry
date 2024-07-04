@@ -14,18 +14,7 @@ tools {
         maven 'Maven'
     } 
 stages {    
-    stage('SonarQube Analysis') { 
-            steps {
-                withSonarQubeEnv('SonarQube-server') { 
-                    sh '''
-                       mvn clean verify sonar:sonar \
-                      -Dsonar.projectKey=CI-DockerImage-Push-Google-Artifact-Registry \
-                      -Dsonar.host.url=http://34.71.56.57:9000 \
-                      -Dsonar.login=sqp_5059067c2d0f656f42322bd607423bdfb7cb7e74
-                       '''
-                }
-            }
-        }
+
 stage('Maven Test') {
             steps {
                 // Define steps for the Test stage
@@ -41,7 +30,18 @@ stage('Maven Build') {
                 sh 'mvn clean package'
             }
         }
-    
+stage('SonarQube Analysis') { 
+            steps {
+                withSonarQubeEnv('SonarQube-server') { 
+                    sh '''
+                       mvn clean verify sonar:sonar \
+                      -Dsonar.projectKey=CI-DockerImage-Push-Google-Artifact-Registry \
+                      -Dsonar.host.url=http://34.71.56.57:9000 \
+                      -Dsonar.login=sqp_5059067c2d0f656f42322bd607423bdfb7cb7e74
+                       '''
+                }
+            }
+        }    
 stage('Docker Build Image') {
             steps {
                 script {
