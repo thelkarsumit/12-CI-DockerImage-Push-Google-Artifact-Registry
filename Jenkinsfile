@@ -43,8 +43,7 @@ stage('Docker Build Image') {
             steps {
                 script {
                     // Build the Docker image
-                    sh 'gcloud auth activate-service-account --key-file="$GCLOUD_CREDS" \
-                        docker build -t us-central1-docker.pkg.dev/peak-axiom-426310-b1/docker-image-push-01/helloworld1 .'
+                    sh 'docker build -t us-central1-docker.pkg.dev/peak-axiom-426310-b1/docker-image-push-01/helloworld1 .'
                 }
             }
         }
