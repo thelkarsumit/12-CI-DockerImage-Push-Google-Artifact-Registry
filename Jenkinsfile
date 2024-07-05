@@ -34,10 +34,10 @@ stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('SonarQube-server') { 
                     sh '''
-                       mvn clean verify sonar:sonar \
-                      -Dsonar.projectKey=CI-DockerImage-Push-Google-Artifact-Registry \
-                      -Dsonar.host.url=http://34.71.56.57:9000 \
-                      -Dsonar.login=sqp_5059067c2d0f656f42322bd607423bdfb7cb7e74
+                         mvn clean verify sonar:sonar \
+                        -Dsonar.projectKey=CI-DockerImage-Push-Google-Artifact-Registry \
+                        -Dsonar.host.url=http://35.228.122.206:9000 \
+                        -Dsonar.login=sqp_9a7b322e5ebb580b366e0c50bff6542136d3577e
                        '''
                 }
             }
