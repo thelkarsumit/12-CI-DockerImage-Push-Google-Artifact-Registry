@@ -68,5 +68,10 @@ stage('Trivy Scan Docker Image') {
                 }
             }
        }
-}     
+}
+         post {
+          always {
+                 cleanWs()
+            }
+         }
 }
