@@ -59,31 +59,13 @@ stage('Trivy Scan Docker Image') {
             }
         }
     
-stage('Docker Push To Google-Artifact-Registry') {
-            steps {
-                script {
-                        sh 'gcloud auth configure-docker us-central1-docker.pkg.dev'
-                        sh 'docker push us-central1-docker.pkg.dev/peak-axiom-426310-b1/docker-image-push-01/helloworld2'
-                }
-            }
-        }
-}    
-post {
-        success {
-            // Actions to take if the pipeline succeeds
-            echo 'Pipeline succeeded!'
-            // You can also send an email notification on success
-            mail to: 'thelkarsc@gmail.com',
-                 subject: "Pipeline Succeeded: ${currentBuild.fullDisplayName}",
-                 body: "The pipeline ${env.BUILD_URL} has successfully completed."
-        }
-        failure {
-            // Actions to take if the pipeline fails
-            echo 'Pipeline failed!'
-            // You can also send an email notification on failure
-            mail to: 'thelkarsc@gmail.com',
-                 subject: "Pipeline Failed: ${currentBuild.fullDisplayName}",
-                 body: "The pipeline ${env.BUILD_URL} has failed. Check the logs for details."
-        }
-    }  
+// stage('Docker Push To Google-Artifact-Registry') {
+    //        steps {
+      //          script {
+        //                sh 'gcloud auth configure-docker us-central1-docker.pkg.dev'
+          //              sh 'docker push us-central1-docker.pkg.dev/peak-axiom-426310-b1/docker-image-push-01/helloworld2'
+            //    }
+            //}
+      //  }
+}     
 }
