@@ -54,7 +54,7 @@ stage('Docker Build Image') {
 stage('Trivy Scan Docker Image') {
             steps {
                 script {
-                    sh 'trivy image us-central1-docker.pkg.dev/peak-axiom-426310-b1/docker-image-push-01/helloworld1 > trivy_report.txt'
+                    sh 'trivy image us-central1-docker.pkg.dev/peak-axiom-426310-b1/docker-image-push-01/helloworld > trivy_report.txt'
                 }
             }
         }
