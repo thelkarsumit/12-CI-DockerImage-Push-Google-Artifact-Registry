@@ -46,7 +46,7 @@ stage('Docker Build Image') {
             steps {
                 script {
                     // Build the Docker image
-                    sh 'docker build -t us-central1-docker.pkg.dev/peak-axiom-426310-b1/docker-image-push-01/helloworld1 .'
+                    sh 'docker build -t us-central1-docker.pkg.dev/peak-axiom-426310-b1/docker-image-push-01/helloworld2 .'
                 }
             }
         }
@@ -63,7 +63,7 @@ stage('Docker Push To Google-Artifact-Registry') {
             steps {
                 script {
                         sh 'gcloud auth configure-docker us-central1-docker.pkg.dev'
-                        sh 'docker push us-central1-docker.pkg.dev/peak-axiom-426310-b1/docker-image-push-01/helloworld1'
+                        sh 'docker push us-central1-docker.pkg.dev/peak-axiom-426310-b1/docker-image-push-01/helloworld2'
                 }
             }
         }
