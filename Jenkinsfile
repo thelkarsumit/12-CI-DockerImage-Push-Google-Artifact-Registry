@@ -36,7 +36,7 @@ stage('SonarQube Analysis') {
                     sh '''
                          mvn clean verify sonar:sonar \
                         -Dsonar.projectKey=CI-DockerImage-Push-Google-Artifact-Registry \
-                        -Dsonar.host.url=http://35.228.122.206:9000 \
+                        -Dsonar.host.url=http://34.88.68.206:9000/ \
                         -Dsonar.login=sqp_9a7b322e5ebb580b366e0c50bff6542136d3577e
                        '''
                 }
