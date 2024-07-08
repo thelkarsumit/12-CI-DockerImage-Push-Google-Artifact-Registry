@@ -90,5 +90,4 @@ stage('Trivy Scan Docker Image') {
                  body: "The pipeline ${env.BUILD_URL} has failed. Check the logs for details."
             }
         } 
-    }
 }
